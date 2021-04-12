@@ -25,10 +25,24 @@
       </nav>
     </header>
     <main>
-      <div class="inputs__container">
-        <input type="text" name="task" id="task" placeholder="Tarea" />
-        <input type="button" value="Añadir" />
-      </div>
+      <form action="#">
+        <div class="inputs__container">
+          <div class="title__inputs">
+            <h2><i></i>(Application)</h2>
+          </div>
+          <label class="input__label" for="">
+            <span class="input__span">Tasks</span>
+            <input
+              type="text"
+              class="input__task"
+              name="task"
+              id="task"
+              placeholder="Tasks"
+            />
+          </label>
+          <input type="button" class="input__submit" value="Añadir" />
+        </div>
+      </form>
     </main>
     <footer class="footer">
       <div>
@@ -38,5 +52,6 @@
         <h2>Sticky Footer</h2>
       </div>
     </footer>
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>

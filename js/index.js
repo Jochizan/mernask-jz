@@ -1,2 +1,3 @@
-console.log('Test');
-console.log('Hola mundo')
+import { d, w, n } from './modules/global.js';
+
+console.log(d, w, n);
