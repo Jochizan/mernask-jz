@@ -1,0 +1,32 @@
+button.button {
+  display: inline-block;
+  padding: 4px 12px;
+  margin: 2px 8px 8px 2px;
+  margin-left: 40px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--ocean-green);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+button.button:hover {
+  background-color: var(--turquoise-green);
+  color: var(--dark);
+}
+
+@media (max-width: 760px) {
+  .container__group {
+    display: block;
+  }
+
+  button.button {
+    display: block;
+    margin: 0.2rem auto;
+    padding: 5px;
+    font-size: 11px;
+    margin-left: 10px;
+  }
+}
