@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -100,6 +101,8 @@ header {
   padding: 8px 10px;
   position: relative;
   box-sizing: border-box;
+  border-radius: 4px;
+  transition: .25s;
 }
 
 .input__label .input__task {
@@ -111,6 +114,7 @@ header {
 }
 
 .input__label .input__span {
+  transition: .25s;
   color: silver;
   position: absolute;
   top: 8px;
@@ -119,17 +123,17 @@ header {
 
 /* focus */
 
-.input__label:focus {
+.input__label.focus {
   border-color: #ff4040;
 }
 
-.input__label .input__span:focus {
+.input__label .input__span.focus {
   color: #ff4040;
 }
 
 /* Top */
 
-.input__label .input__span {
+.input__label .input__span.top {
   left: 2px;
   top: -10px;
   font-size: 12px;
