@@ -26,25 +26,33 @@
       </nav>
     </header>
     <main>
-      <form action="#">
-        <div class="inputs__container">
-          <div class="title__inputs">
-            <h2><i></i>(Application)</h2>
-          </div>
-          <div class="container__group">
-            <label class="input__label" for="task">
-              <span class="input__span">Tasks</span>
-              <input type="text" class="input__task" name="task" id="task" />
-            </label>
-            <div class="btn__submit">
-              <button class="button" type="submit" id="btn-adding">
-                Adding
-              </button>
-              <!-- <button class="button" id="btn-reset">It's getting old</a>  -->
-            </div>
+      <div class="inputs__container">
+        <div class="title__inputs">
+          <h2><i></i>(Application)</h2>
+        </div>
+        <div class="container__group">
+          <label class="input__label" for="task">
+            <span class="input__span">Tasks</span>
+            <input type="text" class="input__task" name="task" id="task" />
+          </label>
+          <div class="btn__submit">
+            <button class="button" type="submit" id="btn-adding">Adding</button>
+            <!-- <button class="button" id="btn-reset">It's getting old</a>  -->
           </div>
         </div>
-      </form>
+        <section class="todoList">
+          <article class="todoList__item">
+            <div class="right__theme">
+              <p class="task__description">Tarea por realizar</p>
+            </div>
+            <div class="left__theme">
+              <a class="task__end">✔</a>
+              <!-- <a class="task__change"> ⚠ </a> -->
+              <a class="task__erase">❌</a>
+            </div>
+          </article>
+        </section>
+      </div>
     </main>
     <footer class="footer">
       <div>

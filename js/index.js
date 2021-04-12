@@ -9,7 +9,7 @@ $inputTask.addEventListener('focus', () => {
 });
 
 $inputTask.addEventListener('blur', () => {
-  $inputTask.value  = $inputTask.value.trim(' ')
+  $inputTask.value = $inputTask.value.trim(' ');
   if (!$inputTask.value.trim(' ').length) {
     $inputTask.previousElementSibling.classList.remove('top');
   }
@@ -17,3 +17,5 @@ $inputTask.addEventListener('blur', () => {
   $inputTask.previousElementSibling.classList.remove('focus');
   $inputTask.parentNode.classList.remove('focus');
 });
+
+d.addEventListener('DOMContentLoaded', () => {});
