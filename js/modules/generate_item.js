@@ -1,3 +1,4 @@
+import deleteTask from './delete_task.js';
 import { d } from './global.js';
 
 const generateItem = (text) => {
@@ -27,6 +28,21 @@ const generateItem = (text) => {
   $article.classList.add('todoList__item');
   $article.appendChild($div1);
   $article.appendChild($div2);
+
+  $a1.addEventListener('click', (e) => {
+    if (e.target == $a1) {
+      $p1.style.textDecoration === 'line-through'
+        ? ($p1.style.textDecoration = 'none')
+        : ($p1.style.textDecoration = 'line-through');
+    }
+  });
+
+  $a2.addEventListener('click', (e) => {
+    if (e.target == $a2) {
+      $a2.parentElement.parentElement.parentElement.removeChild($article);
+      deleteTask(text);
+    }
+  });
 
   return $article;
 };

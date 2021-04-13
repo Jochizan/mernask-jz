@@ -1,5 +1,4 @@
 import { d, ls } from './global.js';
-import addTask from './add_task.js';
 import generateItem from './generate_item.js';
 
 const loadTasks = (todoList) => {
