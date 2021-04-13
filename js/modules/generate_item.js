@@ -1,6 +1,8 @@
 import { d } from './global.js';
+import deleteItem from './items/delete_item.js';
+import lineThrough from './items/line_through.js';
 
-const generateItem = (text) => {
+const generateItem = (text, id, finish) => {
   const $article = d.createElement('article');
   const $div1 = d.createElement('div');
   const $div2 = d.createElement('div');
@@ -20,6 +22,9 @@ const generateItem = (text) => {
   // primera
   $p1.classList.add('task__description');
   $p1.innerText = text;
+  if (finish) {
+    $p1.style.textDecoration = 'line-through';
+  }
 
   $div1.appendChild($p1);
 
@@ -27,6 +32,14 @@ const generateItem = (text) => {
   $article.classList.add('todoList__item');
   $article.appendChild($div1);
   $article.appendChild($div2);
+
+  $a1.addEventListener('click', (e) => {
+    lineThrough(e, id, $a1, $p1);
+  });
+
+  $a2.addEventListener('click', (e) => {
+    deleteItem(e, id, $a2, $article);
+  });
 
   return $article;
 };

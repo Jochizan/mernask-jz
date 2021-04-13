@@ -10,11 +10,12 @@ const addList = (btn, todoList, task) => {
       const $task = d.querySelector(task);
       const $todoList = d.querySelector(todoList);
       const $inputTask = d.querySelector('.input__task');
+      const id = Date.now()
       const text = $task.value;
       $task.value = '';
 
-      addTask(text);
-      $todoList.insertAdjacentElement('afterbegin', generateItem(text));
+      addTask(text, id);
+      $todoList.insertAdjacentElement('afterbegin', generateItem(text, id));
       $inputTask.previousElementSibling.classList.remove('top');
     }
   });
