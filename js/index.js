@@ -1,4 +1,6 @@
 import { d, w, n } from './modules/global.js'; // modular document, window y navigator
+import loadTasks from './modules/load_tasks.js';
+import addList from './modules/todo_adding.js';
 
 const $inputTask = d.querySelector('.input__task');
 
@@ -8,9 +10,10 @@ $inputTask.addEventListener('focus', () => {
   $inputTask.parentNode.classList.add('focus');
 });
 
-$inputTask.addEventListener('blur', () => {
+
+$inputTask.addEventListener('blur', (e) => {
   $inputTask.value = $inputTask.value.trim(' ');
-  if (!$inputTask.value.trim(' ').length) {
+  if (!$inputTask.value.trim('').length) {
     $inputTask.previousElementSibling.classList.remove('top');
   }
 
@@ -18,4 +21,7 @@ $inputTask.addEventListener('blur', () => {
   $inputTask.parentNode.classList.remove('focus');
 });
 
-d.addEventListener('DOMContentLoaded', () => {});
+w.addEventListener('DOMContentLoaded', () => {
+  addList('#btn-adding', '.todoList', '#task');
+  loadTasks('.todoList');
+});

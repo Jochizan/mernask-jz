@@ -1,10 +1,23 @@
-import { d, w, n } from './global.js';
+import { d } from './global.js';
+import addTask from './add_task.js';
+import generateItem from './generate_item.js';
 
-const addList = ($btn) => {
+const addList = (btn, todoList, task) => {
+  const $btn = d.querySelector(btn);
 
-  d.addEventListener('click', (e) => {
-    if (e.target.matches($btn)) {
-      
+  $btn.addEventListener('click', (e) => {
+    if (e.target == $btn) {
+      const $task = d.querySelector(task);
+      const $todoList = d.querySelector(todoList);
+      const $inputTask = d.querySelector('.input__task');
+      const text = $task.value;
+      $task.value = '';
+
+      addTask(text);
+      $todoList.insertAdjacentElement('afterbegin', generateItem(text));
+      $inputTask.previousElementSibling.classList.remove('top');
     }
-  })
-}
+  });
+};
+
+export default addList;
