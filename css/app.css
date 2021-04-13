@@ -5,30 +5,22 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
   /* Colores provisionales */
   --dark: #222;
   --white: #eee;
-  --color-light: white;
   --color-dark: #212121;
-  --color-signal: #fab700;
-
-  --color-background: var(--color-light);
+  --turquoise-green: #b7e4c7;
+  --jungle-green: #1b4332;
+  --ocean-green: #52b788;
   --color-text: var(--color-dark);
-  --color-accent: var(--color-signal);
-
-  --size-bezel: 0.5rem;
-  --size-radius: 4px;
-
   line-height: 1.4;
-  font-family: 'Inter', sans-serif;
   font-size: calc(0.6rem + 0.4vw);
   color: var(--color-text);
-  background: var(--color-background);
   font-weight: 300;
-  /* padding: 0 calc(var(--size-bezel) * 3); */
 }
 
 body {
@@ -42,17 +34,18 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--white);
 }
 
 header {
-  background-color: var(--dark);
+  background-color: var(--turquoise-green);
 }
 
 /* Navbar */
 
 .navbar__title {
   font-size: 40px;
-  color: var(--white);
+  color: var(--dark);
 }
 
 .navbar__container {
@@ -73,11 +66,11 @@ header {
 
 .footer {
   padding: 1rem;
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: var(--turquoise-green);
+  color: var(--dark);
 }
 
-.footer div h2 {
+.footer .btn__submit h2 {
   text-align: center;
   font-size: 48px;
 }
@@ -94,12 +87,14 @@ header {
 
 .input__label {
   display: block;
-  width: calc(80vw - 10px);
+  width: calc(72vw - 24px);
   height: 40px;
-  border: 3px solid silver;
+  border: 3px solid var(--turquoise-green);
   padding: 8px 10px;
   position: relative;
   box-sizing: border-box;
+  border-radius: 4px;
+  transition: 0.25s;
 }
 
 .input__label .input__task {
@@ -108,10 +103,13 @@ header {
   width: 100%;
   background: transparent;
   outline: none;
+  font-size: 20px;
 }
 
 .input__label .input__span {
-  color: silver;
+  font-size: 20px;
+  transition: 0.25s;
+  color: var(--ocean-green);
   position: absolute;
   top: 8px;
   left: 10px;
@@ -119,27 +117,114 @@ header {
 
 /* focus */
 
-.input__label:focus {
-  border-color: #ff4040;
+.input__label.focus {
+  border-color: var(--ocean-green);
 }
 
-.input__label .input__span:focus {
-  color: #ff4040;
+.input__label .input__span.focus {
+  color: var(--ocean-green);
 }
 
 /* Top */
 
-.input__label .input__span {
+.input__label .input__span.top {
   left: 2px;
   top: -10px;
-  font-size: 12px;
-  background: white;
+  font-size: 14px;
+  background: var(--white);
   padding: 0 5px;
+}
+
+.container__group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* TodoList */
+.todoList {
+  /* width: calc(72vw - 24px); */
+  display: block;
+  padding: 10px;
+  margin: 10px;
+}
+
+.todoList__item {
+  background-color: var(--turquoise-green);
+  border-radius: 8px;
+  box-shadow: 8px 8px 2px var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 4px solid var(--ocean-green);
+}
+
+.task__description {
+  margin-right: 40px;
+  font-size: 20px;
+}
+
+.task__end {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  color: #3bb143;
+}
+
+.task__erase {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 @media (min-width: 960px) {
   .input__label {
-    width: calc(50vw - 10px);
-    height: 30px;
+    width: calc(42vw - 20px);
+    height: 50px;
+  }
+
+  /* .todoList {
+    width: calc(42vw - 24px);
+  } */
+}
+
+@media (max-width: 760px) {
+  .container__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .task__description {
+    font-size: 16px;
+  }
+
+  .task__end {
+    font-size: 16px;
+  }
+
+  .task__erase {
+    font-size: 16px;
+  }
+
+  .input__label .input__span {
+    font-size: 16px;
+  }
+
+  .input__label .input__span.top {
+    font-size: 12px;
+  }
+
+  .input__label .input__task {
+    font-size: 16px;
+  }
+
+  .btn__submit {
+    display: flex;
+    align-items: center;
   }
 }
