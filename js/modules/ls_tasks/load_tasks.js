@@ -7,10 +7,18 @@ const loadTasks = (todoList) => {
     const values = JSON.parse(ls.getItem('tasks'));
 
     values.forEach((el) => {
-      $todoList.insertAdjacentElement(
-        'afterbegin',
-        generateItem(el.text, el.id, el.finish)
-      );
+      if (el.finish) {
+        $todoList.insertAdjacentElement(
+          'beforeend',
+          generateItem(el.text, el.id, el.finish)
+        );
+      } else {
+        debugger
+        $todoList.insertAdjacentElement(
+          'afterbegin',
+          generateItem(el.text, el.id, el.finish)
+        );
+      }
     });
   }
 };

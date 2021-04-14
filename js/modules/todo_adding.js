@@ -7,7 +7,10 @@ const addList = (btn, todoList, task, input) => {
   // button
   $btn.addEventListener('click', (e) => {
     if (e.target == $btn) {
+      const $inputTask = d.querySelector(input);
+
       addingEvent(task, todoList, input);
+      $inputTask.previousElementSibling.classList.remove('top');
     }
   });
 };

@@ -11,7 +11,7 @@ const toggleInput = (input) => {
 
   $inputTask.addEventListener('blur', (e) => {
     $inputTask.value = $inputTask.value.trim(' ');
-    if (!$inputTask.value.trim('').length) {
+    if (!$inputTask.value.trim(' ').length) {
       $inputTask.previousElementSibling.classList.remove('top');
     }
 
