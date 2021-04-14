@@ -1,24 +1,24 @@
-import { d } from './global.js';
-import addTask from './add_task.js';
-import generateItem from './generate_item.js';
+import { d, w } from './global/global.js';
+import addingEvent from './adding_event.js';
 
-const addList = (btn, todoList, task) => {
+const addList = (btn, todoList, task, input) => {
   const $btn = d.querySelector(btn);
 
+  // button
   $btn.addEventListener('click', (e) => {
     if (e.target == $btn) {
-      const $task = d.querySelector(task);
-      const $todoList = d.querySelector(todoList);
-      const $inputTask = d.querySelector('.input__task');
-      const id = Date.now()
-      const text = $task.value;
-      $task.value = '';
-
-      addTask(text, id);
-      $todoList.insertAdjacentElement('afterbegin', generateItem(text, id));
-      $inputTask.previousElementSibling.classList.remove('top');
+      addingEvent(task, todoList, input);
     }
   });
 };
 
-export default addList;
+const addListKeyEnter = (todoList, task, input) => {
+  // keydown 'ENTER'
+  w.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target.value) {
+      addingEvent(task, todoList, input);
+    }
+  });
+};
+
+export { addList, addListKeyEnter };

@@ -3,4 +3,6 @@ const w = window;
 const n = navigator;
 const ls = localStorage;
 
-export { d, w, n, ls, };
+const date = new Date();
+
+export { d, w, n, ls, date };

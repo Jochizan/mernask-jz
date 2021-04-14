@@ -1,6 +1,6 @@
-import { d } from './global.js';
-import deleteItem from './items/delete_item.js';
-import lineThrough from './items/line_through.js';
+import { d } from '../global/global.js';
+import deleteItem from './delete_item.js';
+import lineThrough from '../ls_tasks/line_through.js';
 
 const generateItem = (text, id, finish) => {
   const $article = d.createElement('article');
@@ -33,6 +33,7 @@ const generateItem = (text, id, finish) => {
   $article.appendChild($div1);
   $article.appendChild($div2);
 
+  // events
   $a1.addEventListener('click', (e) => {
     lineThrough(e, id, $a1, $p1);
   });

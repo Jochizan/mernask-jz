@@ -1,4 +1,4 @@
-import { d } from './global.js';
+import { d } from './global/global.js';
 
 const toggleInput = (input) => {
   const $inputTask = d.querySelector(input);

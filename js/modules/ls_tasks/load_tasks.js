@@ -1,11 +1,10 @@
-import { d, ls } from './global.js';
-import generateItem from './generate_item.js';
+import { d, ls } from '../global/global.js';
+import generateItem from '../event_tasks/generate_item.js';
 
 const loadTasks = (todoList) => {
-  const $todoList = d.querySelector(todoList);
-
   if (ls.getItem('tasks') !== null) {
-    const values = JSON.parse(ls.getItem('tasks')).tasks;
+    const $todoList = d.querySelector(todoList);
+    const values = JSON.parse(ls.getItem('tasks'));
 
     values.forEach((el) => {
       $todoList.insertAdjacentElement(
