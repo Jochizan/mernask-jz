@@ -60,6 +60,7 @@ header {
   justify-content: center;
   height: 150px;
 }
+
 #btn-menu {
   display: none;
 }
@@ -211,6 +212,7 @@ header {
 .task__description {
   margin-right: 40px;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .task__end {

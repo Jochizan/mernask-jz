@@ -1,4 +1,4 @@
-import { d } from './global.js';
+import { d } from './global/global.js';
 
 const toggleInput = (input) => {
   const $inputTask = d.querySelector(input);
@@ -11,7 +11,7 @@ const toggleInput = (input) => {
 
   $inputTask.addEventListener('blur', (e) => {
     $inputTask.value = $inputTask.value.trim(' ');
-    if (!$inputTask.value.trim('').length) {
+    if (!$inputTask.value.trim(' ').length) {
       $inputTask.previousElementSibling.classList.remove('top');
     }
 
