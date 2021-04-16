@@ -1,25 +1,25 @@
 import { d, w } from './global/global.js';
 import addingEvent from './adding_event.js';
 
-const addList = (btn, todoList, task, input) => {
+const addList = (btn, todoList, input) => {
   const $btn = d.querySelector(btn);
 
-  // button
+  // click button
   $btn.addEventListener('click', (e) => {
-    if (e.target == $btn) {
+    if (e.target.matches(btn + '> *')) {
       const $inputTask = d.querySelector(input);
 
-      addingEvent(task, todoList, input);
+      addingEvent(todoList, input);
       $inputTask.previousElementSibling.classList.remove('top');
     }
   });
 };
 
-const addListKeyEnter = (todoList, task, input) => {
+const addListKeyEnter = (btn, todoList, input) => {
   // keydown 'ENTER'
   w.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && e.target.value) {
-      addingEvent(task, todoList, input);
+    if (e.key === 'Enter' && (e.target.value || e.target)) {
+      addingEvent(todoList, input);
     }
   });
 };

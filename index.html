@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/app.css" />
     <link rel="stylesheet" href="./css/button.css" />
     <title>Apps Webs</title>
@@ -14,52 +20,75 @@
         <!-- Logo -->
         <div class="navbar__container">
           <h2 class="navbar__title">
-            Todo List(Como le llamamos a la aplicación?)
+            NoteList
           </h2>
         </div>
         <!-- hamburger menu -->
-        <div class="hamburger__menu" onclick="{}">
-          <input type="checkbox" id="btn-menu">
+        <div class="hamburger__menu">
+          <input type="checkbox" id="btn-menu" />
           <label for="btn-menu" class="btn-menu-icon">
-            <img src="./img/menu_burge.png" alt="menuburge">
+            <img src="./img/menu_burge.png" alt="menuburge" />
           </label>
           <nav class="hamburger__menu-nav">
             <ul>
               <li><a href="/">Iniciar Sesión</a></li>
               <li><a href="/">Dark Mode</a></li>
               <li><a href="/">Generar codigo</a></li>
-            </ul> 
+            </ul>
           </nav>
         </div>
       </nav>
     </header>
     <main>
+      <!-- inputs container -->
       <div class="inputs__container">
         <div class="title__inputs">
-          <h2><i></i>(Application)</h2>
+          <h2><i></i>NoteList</h2>
         </div>
         <div class="container__group">
           <label class="input__label" for="task">
             <span class="input__span">Tasks</span>
-            <input type="text" class="input__task" name="task" id="task" />
+            <input type="text" class="input__task" name="task" />
           </label>
           <div class="btn__submit">
-            <button class="button" id="btn-adding">Adding</button>
-            <!-- <button class="button" id="testLs">Test</button> -->
-            <!-- <button class="button" id="btn-reset">It's getting old</a>  -->
+            <button class="button" id="btn-adding">
+              <img
+                class="svg-adding"
+                src="./img/plus-solid.svg"
+                alt="Imagen de agregar"
+              />
+            </button>
           </div>
         </div>
-        <section class="todoList">
-          <!-- <a class="task__change"> ⚠ </a> -->
-        </section>
+        <section class="todoList"></section>
       </div>
     </main>
     <footer class="footer">
+      <i class="line"></i>
+      <!-- Datos y footer -->
       <div>
-        <i class="line"></i>
-      </div>
-      <div>
-        <h2>Sticky Footer</h2>
+        <section>
+          <ul>
+            <li>
+              <a href=""><i></i>Terms</a>
+            </li>
+            <li>
+              <a href=""><i></i>About Us</a>
+            </li>
+            <li>
+              <a href=""><i></i>Privacy</a>
+            </li>
+            <li>
+              <a href=""><i></i>Status</a>
+            </li>
+            <li>
+              <a href=""><i></i>GitHub</a>
+            </li>
+            <li>
+              <p>© 2021 NoteList, Inc.</p>
+            </li>
+          </ul>
+        </section>
       </div>
     </footer>
     <script src="./js/index.js" type="module"></script>

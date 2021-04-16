@@ -10,17 +10,13 @@
 
 :root {
   /* Colores provisionales */
-  --dark: #222;
+  --dark: #171717;
   --white: #eee;
-  --color-dark: #212121;
-  --turquoise-green: #b7e4c7;
-  --jungle-green: #1b4332;
-  --ocean-green: #52b788;
-  --color-text: var(--color-dark);
-  line-height: 1.4;
-  font-size: calc(0.6rem + 0.4vw);
-  color: var(--color-text);
-  font-weight: 300;
+  --blue-bda: #3d5a80;
+  --blue-cerulean: #98c1d9;
+  --cyan-light: #e0fbfc;
+  --sienna-burnt: #ee6c4d;
+  --gunmetal: #293241;
 }
 
 body {
@@ -34,12 +30,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
+  background-color: #f4f4f4;
 }
 
 header {
   width: 100%;
-  background-color: var(--turquoise-green);
+  background-color: var(--blue-cerulean);
   z-index: 1;
   top: 0%;
   left: 0%;
@@ -65,6 +61,8 @@ header {
   display: none;
 }
 
+/* Hamburger Menu */
+
 .hamburger__menu label {
   display: none;
   width: 90px;
@@ -87,9 +85,15 @@ header {
   justify-content: center;
 }
 
-.hamburger__menu-nav li a {
+.hamburger__menu-nav ul li {
+  border-top: 2px solid var(--blue-bda);
+  padding: 8px;
+}
+
+.hamburger__menu-nav ul li a {
   text-decoration: none;
-  color: black;
+  color: var(--dark);
+  border-bottom: 4px double var(--gunmetal);
   font-size: 20px;
   font-weight: 500;
   display: block;
@@ -99,8 +103,7 @@ header {
 }
 
 .hamburger__menu-nav li a:hover {
-  background-color: var(--ocean-green);
-  /* text-decoration: underline var(--jungle-green) ; */
+  background-color: var(--blue-bda);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -114,8 +117,8 @@ header {
 
 .footer {
   padding: 1rem;
-  background-color: var(--turquoise-green);
   color: var(--dark);
+  background-color: var(--blue-cerulean);
 }
 
 .footer .btn__submit h2 {
@@ -137,10 +140,11 @@ header {
   display: block;
   width: calc(72vw - 24px);
   height: 40px;
-  border: 3px solid var(--turquoise-green);
+  border: 3px solid var(--blue-bda);
   padding: 8px 10px;
   position: relative;
   box-sizing: border-box;
+  background: #f4f4f4;
   border-radius: 4px;
   transition: 0.25s;
 }
@@ -149,7 +153,7 @@ header {
   display: block;
   border: none;
   width: 100%;
-  background: transparent;
+  background: #f4f4f4;
   outline: none;
   font-size: 20px;
 }
@@ -157,7 +161,7 @@ header {
 .input__label .input__span {
   font-size: 20px;
   transition: 0.25s;
-  color: var(--ocean-green);
+  color: var(--blue-bda);
   position: absolute;
   top: 8px;
   left: 10px;
@@ -166,20 +170,20 @@ header {
 /* focus */
 
 .input__label.focus {
-  border-color: var(--ocean-green);
+  border-color: var(--blue-bda);
 }
 
 .input__label .input__span.focus {
-  color: var(--ocean-green);
+  color: var(--blue-bda);
 }
 
 /* Top */
 
 .input__label .input__span.top {
   left: 2px;
-  top: -10px;
-  font-size: 14px;
-  background: var(--white);
+  top: -12px;
+  font-size: 16px;
+  background: #f4f4f4;
   padding: 0 5px;
 }
 
@@ -190,24 +194,26 @@ header {
 }
 
 /* TodoList */
+
 .todoList {
-  /* width: calc(72vw - 24px); */
   display: block;
   padding: 10px;
   margin: 10px;
 }
 
 .todoList__item {
-  background-color: var(--turquoise-green);
+  background-color: var(--blue-cerulean);
   border-radius: 8px;
-  box-shadow: 8px 8px 2px var(--dark);
+  box-shadow: 8px 8px 2px #20202090;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
   margin-bottom: 1.5rem;
-  border-bottom: 4px solid var(--ocean-green);
+  border-bottom: 4px solid var(--blue-bda);
 }
+
+/* Task description */
 
 .task__description {
   margin-right: 40px;
@@ -228,6 +234,37 @@ header {
   border: none;
   cursor: pointer;
   font-size: 20px;
+  /* color: #453500; */
+}
+
+/* Footer and data */
+footer.footer {
+  padding: 0;
+}
+
+.footer div section ul {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+  list-style: none;
+}
+
+.footer div section ul li {
+  font-size: 17px;
+  border-left: 1px solid #b6d1e4;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer div section ul li:nth-child(6) {
+  border-top: 1px dashed #b6d1e4;
+  grid-column: 1 / 6;
+  font-size: 18px;
+}
+
+.footer div section ul li a {
+  text-decoration: none;
+  color: var(--dark);
 }
 
 @media (min-width: 760px) {
@@ -235,10 +272,6 @@ header {
     width: calc(42vw - 20px);
     height: 50px;
   }
-
-  /* .todoList {
-    width: calc(42vw - 24px);
-  } */
 }
 
 @media (max-width: 760px) {
@@ -246,6 +279,20 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .footer div section ul {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    list-style: none;
+  }
+
+  .footer div section ul li:nth-child(5) {
+    grid-column: 1 / 3;
+  }
+
+  .footer div section ul li:nth-child(6) {
+    grid-column: 1 / 3;
   }
 
   .task__description {
@@ -286,7 +333,7 @@ header {
 
   .hamburger__menu-nav {
     position: absolute;
-    background-color: var(--turquoise-green);
+    background-color: var(--blue-cerulean);
     width: 100%;
     margin-top: -100%;
     transition: all 400ms ease;
@@ -294,7 +341,7 @@ header {
 
   .hamburger__menu-nav ul {
     flex-direction: column;
-    border-top: 1px solid var(--jungle-green);
+    border-top: 1px solid var(--blue-bda);
   }
 
   #btn-menu:checked ~ .hamburger__menu-nav {

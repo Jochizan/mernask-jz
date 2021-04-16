@@ -1,26 +1,29 @@
 button.button {
   display: inline-block;
-  padding: 8px 36px;
-  margin-left: 38px;
-  border-radius: 8px;
-  box-sizing: border-box;
-  font-weight: 500;
-  color: var(--white);
-  background-color: var(--ocean-green);
-  text-align: center;
-  transition: all 0.3s;
+  width: 64px;
+  height: auto;
+  padding: 5px 10px;
+  margin-left: calc(4vw - 16px);
+  border-radius: 50%;
+  color: var(--dark);
+  background-color: var(--blue-cerulean);
+  transition: all ease 0.3s;
+}
+
+button.button > img {
+  width: 100%;
+  height: auto;
 }
 
 button.button:hover {
-  background-color: var(--turquoise-green);
+  background-color: var(--blue-bda);
   color: var(--dark);
 }
 
 @media (max-width: 760px) {
-
   button.button {
-    margin: auto;
-    padding: 5px;
-    font-size: 12px;
+    width: 40px;
+    padding: 2px 4px;
+    margin-left: calc(8vw - 10px);
   }
 }
