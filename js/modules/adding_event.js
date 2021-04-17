@@ -6,9 +6,10 @@ const addingEvent = (todoList, input) => {
   const $task = d.querySelector(input);
   const $todoList = d.querySelector(todoList);
 
-  const id = Date.now();
   if (!$task.value.trim(' ').length)
     return console.error('Error ingrese un texto para continuar...');
+  
+  const id = Date.now();
   const text = $task.value;
   $task.value = '';
 
