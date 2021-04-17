@@ -8,6 +8,10 @@
   scroll-behavior: smooth;
 }
 
+html[standardized-themed-scrollbar] {
+  scrollbar-color: #222;
+}
+
 :root {
   /* Colores provisionales */
   --dark: #171717;
@@ -98,8 +102,8 @@ header {
   font-weight: 500;
   display: block;
   padding: 15px 20px;
-  margin: 0px 3px;
-  transition: all 400ms ease;
+  margin: 0px 4px;
+  transition: all 0.3s ease;
 }
 
 .hamburger__menu-nav li a:hover {
@@ -140,7 +144,7 @@ header {
   display: block;
   width: calc(72vw - 24px);
   height: 40px;
-  border: 3px solid var(--blue-bda);
+  border: 3px solid var(--blue-cerulean);
   padding: 8px 10px;
   position: relative;
   box-sizing: border-box;
@@ -161,7 +165,7 @@ header {
 .input__label .input__span {
   font-size: 20px;
   transition: 0.25s;
-  color: var(--blue-bda);
+  color: var(--blue-cerulean);
   position: absolute;
   top: 8px;
   left: 10px;
