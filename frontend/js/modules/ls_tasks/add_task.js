@@ -21,17 +21,21 @@ const addTask = (text, id) => {
       ])
     );
   } else {
-    const values = JSON.parse(ls.getItem('tasks'));
-    values.push({
-      id: id,
-      text: text,
-      finish: false,
-      date: {
-        hour: new Date().toLocaleTimeString(),
-        fullYear: `${day}-0${month}-${year}`
+    const lsValues = JSON.parse(ls.getItem('tasks'));
+    const newValues = [
+      ...lsValues,
+      {
+        id: id,
+        text: text,
+        finish: false,
+        date: {
+          hour: new Date().toLocaleTimeString(),
+          fullYear: `${day}-0${month}-${year}`
+        }
       }
-    });
-    ls.setItem('tasks', JSON.stringify(values));
+    ];
+    console.log(newValues);
+    ls.setItem('tasks', JSON.stringify(newValues));
   }
 };
 

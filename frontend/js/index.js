@@ -5,8 +5,9 @@ import toggleInput from './modules/toggle_input.js';
 
 w.addEventListener('DOMContentLoaded', () => {
   toggleInput('.input__task');
-  addList('#btn-adding', '.todoList', '#task', '.input__task');
+  addList('#btn-adding', '.todoList', '.input__task');
   loadTasks('.todoList');
 });
 
-addListKeyEnter('.todoList', '#task', '.input__task');
+addListKeyEnter('#btn-adding', '.todoList', '.input__task');
+

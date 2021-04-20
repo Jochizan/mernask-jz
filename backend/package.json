@@ -1,0 +1,26 @@
+{
+  "name": "list-note",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jochizan/development-apps.git"
+  },
+  "keywords": [],
+  "author": "Joan Roca Hormaza <remnyachizot2015@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jochizan/development-apps/issues"
+  },
+  "homepage": "https://github.com/Jochizan/development-apps#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.4"
+  }
+}

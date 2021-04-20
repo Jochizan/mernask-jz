@@ -13,7 +13,7 @@ const loadTasks = (todoList) => {
           generateItem(el.text, el.id, el.finish)
         );
       } else {
-        debugger
+        // debugger
         $todoList.insertAdjacentElement(
           'afterbegin',
           generateItem(el.text, el.id, el.finish)
